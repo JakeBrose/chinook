@@ -27,3 +27,7 @@ AND    Invoice.BillingCountry = Customer.Country
 SELECT *
 FROM   Employees
 WHERE  Title = "Sales Support Agent"
+
+--Provide a query showing a unique list of billing countries from the Invoice table.
+SELECT  DISTINCT Invoice.BillingCountry
+FROM   Invoice
