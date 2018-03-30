@@ -56,3 +56,13 @@ FROM   Invoice,
        Employee
 WHERE  Customer.SupportRepId = Employee.EmployeeId
 AND    Customer.CustomerId = Invoice.CustomerId
+
+--How many Invoices were there in 2009 and 2011? What are the respective total sales for each of those years?
+SELECT
+COUNT (Invoice.InvoiceDate)
+AS    "Total Invoices",
+SUM   (Invoice.Total)
+As    "Total Sales"
+FROM  Invoice
+WHERE Invoice.InvoiceDate LIKE '%2009%'
+OR    Invoice.InvoiceDate LIKE '%2011%'
