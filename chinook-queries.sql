@@ -35,8 +35,24 @@ FROM     Invoice
 
 --Provide a query that shows the invoices associated with each sales agent.
 --The resultant table should include the Sales Agent's full name.
-SELECT Employee.FirstName, Employee.LastName, Invoice.*
-FROM   Employee, Invoice, Customer
+SELECT Employee.FirstName,
+       Employee.LastName,
+       Invoice.*
+FROM   Employee,
+       Invoice,
+       Customer
 WHERE  Customer.SupportRepId = Employee.EmployeeId
 AND    Customer.CustomerId = Invoice.CustomerId
 
+--Provide a query that shows the Invoice Total, Customer name, Country and Sales Agent name for all invoices and customers.
+Select Invoice.Total,
+       Customer.FirstName,
+       Customer.LastName,
+       Customer.Country,
+       Employee.FirstName,
+       Employee.LastName
+FROM   Invoice,
+       Customer,
+       Employee
+WHERE  Customer.SupportRepId = Employee.EmployeeId
+AND    Customer.CustomerId = Invoice.CustomerId
