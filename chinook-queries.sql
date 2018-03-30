@@ -86,3 +86,11 @@ SELECT Track.Name,
 FROM   Track,
        InvoiceLine
 WHERE  Track.TrackId = InvoiceLine.TrackId
+
+--Provide a query that includes the purchased track name AND artist name with each invoice line item.
+SELECT Track.Name,
+       Track.Composer,
+       InvoiceLine.*
+FROM   Track,
+       InvoiceLine
+WHERE Track.TrackId = InvoiceLine.TrackId
