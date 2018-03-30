@@ -70,12 +70,19 @@ OR    Invoice.InvoiceDate LIKE '%2011%'
 --Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for Invoice ID 37.
 SELECT
 COUNT (*)
-FROM InvoiceLine
+FROM  InvoiceLine
 WHERE InvoiceLine.InvoiceId = 37
 
 --Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for each Invoice.
 --HINT: GROUP BY
 SELECT
-COUNT (*)
-FROM InvoiceLine
+COUNT    (*)
+FROM     InvoiceLine
 GROUP BY InvoiceLine.InvoiceId
+
+--Provide a query that includes the track name with each invoice line item.
+SELECT Track.Name,
+       InvoiceLine.*
+FROM   Track,
+       InvoiceLine
+WHERE  Track.TrackId = InvoiceLine.TrackId
