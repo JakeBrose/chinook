@@ -22,3 +22,8 @@ FROM   Customer,
        Invoice
 WHERE  Invoice.CustomerId = Customer.CustomerId
 AND    Invoice.BillingCountry = Customer.Country
+
+--Provide a query showing only the Employees who are Sales Agents.
+SELECT *
+FROM   Employees
+WHERE  Title = "Sales Support Agent"
