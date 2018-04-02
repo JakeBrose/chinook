@@ -93,4 +93,18 @@ SELECT Track.Name,
        InvoiceLine.*
 FROM   Track,
        InvoiceLine
-WHERE Track.TrackId = InvoiceLine.TrackId
+WHERE  Track.TrackId = InvoiceLine.TrackId
+
+--Provide a query that shows the # of invoices per country. HINT: GROUP BY
+SELECT
+COUNT    (*)
+FROM     Invoice
+GROUP BY Invoice.BillingCountry
+
+--Provide a query that shows the total number of tracks in each playlist.
+SELECT   Playlist.Name,
+COUNT    ("Track Count")
+FROM     PlaylistTrack,
+         Playlist
+WHERE    PlaylistTrack.PlaylistId = Playlist.PlaylistId
+GROUP BY Playlist.PlaylistId
